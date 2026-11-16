@@ -1,0 +1,24 @@
+{
+  "total_matches": 883,
+  "total_deliveries": 200999,
+  "total_players": 958,
+  "total_pressure_deliveries": 44030,
+  "pressure_percentage": 21.91,
+  "seasons": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "ipl_matches": 401,
+  "t20i_matches": 482,
+  "pressure_distribution": {
+    "Normal": 138189,
+    "Moderate": 18792,
+    "High": 44018
+  },
+  "eligible_batters": 319,
+  "eligible_bowlers": 255,
+  "generated_at": "2026-11-16T12:54:11.935593"
+}

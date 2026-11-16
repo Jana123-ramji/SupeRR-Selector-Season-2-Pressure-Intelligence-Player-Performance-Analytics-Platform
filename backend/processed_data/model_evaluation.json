@@ -1,0 +1,38 @@
+{
+  "train_period": "2022 - 2024",
+  "test_period": "2025 - 2026",
+  "train_deliveries": 120248,
+  "test_deliveries": 80751,
+  "batting_model": {
+    "algorithm": "Histogram Gradient Boosting Regressor",
+    "target": "Runs scored per delivery (off bat)",
+    "train_mae": 1.2254,
+    "test_mae": 1.295,
+    "train_rmse": 1.6532,
+    "test_rmse": 1.7399,
+    "features": [
+      "innings",
+      "overid",
+      "over_ball_num",
+      "balls_rem",
+      "wickets_rem",
+      "cum_runs",
+      "crr",
+      "rrr",
+      "runs_needed",
+      "pressure_index",
+      "is_ipl",
+      "batting_order",
+      "pace_spin_encoded",
+      "knock_out"
+    ]
+  },
+  "bowling_model": {
+    "algorithm": "Dual Gradient Boosting (Runs Regressor + Wicket Classifier)",
+    "target": "Bowler runs conceded + Wicket probability",
+    "test_runs_mae": 1.2809,
+    "test_runs_rmse": 1.7236,
+    "test_wicket_auc": 0.6204,
+    "wicket_value_multiplier": 4.5
+  }
+}

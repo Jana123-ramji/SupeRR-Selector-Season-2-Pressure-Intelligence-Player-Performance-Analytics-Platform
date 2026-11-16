@@ -1,0 +1,59 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+env.bak/
+venv.bak/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Vite / Frontend build
+frontend/dist/
+frontend/.cache/
+
+# Large ML data files (>100MB exceeds GitHub push limit)
+backend/processed_data/*.pkl
+backend/processed_data/*.feather
+*.pkl
+*.feather
+
+# macOS / Windows system files
+.DS_Store
+__MACOSX/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Scratch and temporary evaluation files
+scratch/
+curl_*.json
+api_test_*.json
+live_runner_result.json

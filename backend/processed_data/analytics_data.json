@@ -1,0 +1,1263 @@
+{
+  "summary": {
+    "total_matches": 883,
+    "total_deliveries": 200999,
+    "total_players": 958,
+    "total_pressure_deliveries": 44030,
+    "pressure_percentage": 21.91,
+    "seasons": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "ipl_matches": 401,
+    "t20i_matches": 482,
+    "pressure_distribution": {
+      "Normal": 138189,
+      "Moderate": 18792,
+      "High": 44018
+    },
+    "eligible_batters": 319,
+    "eligible_bowlers": 255,
+    "generated_at": "2026-11-16T12:54:11.935593"
+  },
+  "over_trends": [
+    {
+      "over": 1,
+      "run_rate": 6.73,
+      "pressure_pct": 0.4,
+      "wicket_pct": 3.9
+    },
+    {
+      "over": 2,
+      "run_rate": 7.79,
+      "pressure_pct": 0.0,
+      "wicket_pct": 4.4
+    },
+    {
+      "over": 3,
+      "run_rate": 8.75,
+      "pressure_pct": 0.2,
+      "wicket_pct": 4.8
+    },
+    {
+      "over": 4,
+      "run_rate": 8.78,
+      "pressure_pct": 0.5,
+      "wicket_pct": 4.5
+    },
+    {
+      "over": 5,
+      "run_rate": 9.02,
+      "pressure_pct": 1.6,
+      "wicket_pct": 5.0
+    },
+    {
+      "over": 6,
+      "run_rate": 8.96,
+      "pressure_pct": 3.1,
+      "wicket_pct": 4.4
+    },
+    {
+      "over": 7,
+      "run_rate": 7.34,
+      "pressure_pct": 1.8,
+      "wicket_pct": 3.8
+    },
+    {
+      "over": 8,
+      "run_rate": 7.7,
+      "pressure_pct": 3.7,
+      "wicket_pct": 4.1
+    },
+    {
+      "over": 9,
+      "run_rate": 7.96,
+      "pressure_pct": 5.4,
+      "wicket_pct": 4.3
+    },
+    {
+      "over": 10,
+      "run_rate": 7.96,
+      "pressure_pct": 8.0,
+      "wicket_pct": 4.3
+    },
+    {
+      "over": 11,
+      "run_rate": 8.01,
+      "pressure_pct": 5.6,
+      "wicket_pct": 4.8
+    },
+    {
+      "over": 12,
+      "run_rate": 8.19,
+      "pressure_pct": 7.5,
+      "wicket_pct": 4.8
+    },
+    {
+      "over": 13,
+      "run_rate": 8.29,
+      "pressure_pct": 10.0,
+      "wicket_pct": 5.3
+    },
+    {
+      "over": 14,
+      "run_rate": 8.46,
+      "pressure_pct": 12.9,
+      "wicket_pct": 5.3
+    },
+    {
+      "over": 15,
+      "run_rate": 8.62,
+      "pressure_pct": 15.1,
+      "wicket_pct": 6.1
+    },
+    {
+      "over": 16,
+      "run_rate": 8.84,
+      "pressure_pct": 69.7,
+      "wicket_pct": 5.9
+    },
+    {
+      "over": 17,
+      "run_rate": 9.18,
+      "pressure_pct": 78.3,
+      "wicket_pct": 6.4
+    },
+    {
+      "over": 18,
+      "run_rate": 9.61,
+      "pressure_pct": 82.2,
+      "wicket_pct": 7.3
+    },
+    {
+      "over": 19,
+      "run_rate": 9.87,
+      "pressure_pct": 87.1,
+      "wicket_pct": 9.1
+    },
+    {
+      "over": 20,
+      "run_rate": 10.9,
+      "pressure_pct": 94.8,
+      "wicket_pct": 13.2
+    }
+  ],
+  "format_comparison": {
+    "IPL": {
+      "matches": 401,
+      "avg_score": 174.1,
+      "run_rate": 8.8,
+      "boundary_pct": 19.2,
+      "pressure_pct": 21.9
+    },
+    "T20I": {
+      "matches": 482,
+      "avg_score": 157.0,
+      "run_rate": 8.2,
+      "boundary_pct": 16.9,
+      "pressure_pct": 21.9
+    }
+  },
+  "model_evaluation": {
+    "train_period": "2022 - 2024",
+    "test_period": "2025 - 2026",
+    "train_deliveries": 120248,
+    "test_deliveries": 80751,
+    "batting_model": {
+      "algorithm": "Histogram Gradient Boosting Regressor",
+      "target": "Runs scored per delivery (off bat)",
+      "train_mae": 1.2254,
+      "test_mae": 1.295,
+      "train_rmse": 1.6532,
+      "test_rmse": 1.7399,
+      "features": [
+        "innings",
+        "overid",
+        "over_ball_num",
+        "balls_rem",
+        "wickets_rem",
+        "cum_runs",
+        "crr",
+        "rrr",
+        "runs_needed",
+        "pressure_index",
+        "is_ipl",
+        "batting_order",
+        "pace_spin_encoded",
+        "knock_out"
+      ]
+    },
+    "bowling_model": {
+      "algorithm": "Dual Gradient Boosting (Runs Regressor + Wicket Classifier)",
+      "target": "Bowler runs conceded + Wicket probability",
+      "test_runs_mae": 1.2809,
+      "test_runs_rmse": 1.7236,
+      "test_wicket_auc": 0.6204,
+      "wicket_value_multiplier": 4.5
+    }
+  },
+  "top_batters_preview": [
+    {
+      "player_id": 4842,
+      "player_name": "Shamar Springer",
+      "image_url": null,
+      "teams": [
+        "West Indies"
+      ],
+      "total_balls": 69,
+      "total_runs": 116,
+      "total_matches": 7,
+      "total_strike_rate": 168.12,
+      "pressure_balls": 65,
+      "pressure_runs": 114,
+      "pressure_innings": 7,
+      "pressure_matches": 7,
+      "pressure_strike_rate": 175.38,
+      "normal_strike_rate": 50.0,
+      "strike_rate_delta": 125.38,
+      "pressure_average": 28.5,
+      "pressure_fours": 9,
+      "pressure_sixes": 8,
+      "pressure_dismissals": 4,
+      "expected_pressure_runs": 73.47,
+      "runs_added_above_expected": 40.53,
+      "raae_per_100_balls": 62.35,
+      "consistency_pct": 85.7,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "middle": {
+          "balls": 19,
+          "runs": 18,
+          "sr": 94.7
+        },
+        "death": {
+          "balls": 46,
+          "runs": 96,
+          "sr": 208.7
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 98.5,
+      "rank": 1
+    },
+    {
+      "player_id": 332,
+      "player_name": "Angelo Mathews",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cricketers_chatting_during_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo%2C_2023_%28cropped_-_Mathews%29.jpg/330px-Cricketers_chatting_during_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo%2C_2023_%28cropped_-_Mathews%29.jpg",
+      "teams": [
+        "Sri Lanka"
+      ],
+      "total_balls": 150,
+      "total_runs": 206,
+      "total_matches": 7,
+      "total_strike_rate": 137.33,
+      "pressure_balls": 77,
+      "pressure_runs": 144,
+      "pressure_innings": 7,
+      "pressure_matches": 7,
+      "pressure_strike_rate": 187.01,
+      "normal_strike_rate": 84.93,
+      "strike_rate_delta": 102.08,
+      "pressure_average": 36.0,
+      "pressure_fours": 14,
+      "pressure_sixes": 7,
+      "pressure_dismissals": 4,
+      "expected_pressure_runs": 107.7,
+      "runs_added_above_expected": 36.3,
+      "raae_per_100_balls": 47.14,
+      "consistency_pct": 71.4,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 6,
+          "runs": 2,
+          "sr": 33.3
+        },
+        "middle": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "death": {
+          "balls": 71,
+          "runs": 142,
+          "sr": 200.0
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 98.5,
+      "rank": 2
+    },
+    {
+      "player_id": 8295,
+      "player_name": "Matthew Forde",
+      "image_url": null,
+      "teams": [
+        "West Indies"
+      ],
+      "total_balls": 114,
+      "total_runs": 168,
+      "total_matches": 14,
+      "total_strike_rate": 147.37,
+      "pressure_balls": 75,
+      "pressure_runs": 136,
+      "pressure_innings": 11,
+      "pressure_matches": 11,
+      "pressure_strike_rate": 181.33,
+      "normal_strike_rate": 82.05,
+      "strike_rate_delta": 99.28,
+      "pressure_average": 17.0,
+      "pressure_fours": 10,
+      "pressure_sixes": 9,
+      "pressure_dismissals": 8,
+      "expected_pressure_runs": 95.65,
+      "runs_added_above_expected": 40.35,
+      "raae_per_100_balls": 53.8,
+      "consistency_pct": 81.8,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "middle": {
+          "balls": 17,
+          "runs": 29,
+          "sr": 170.6
+        },
+        "death": {
+          "balls": 58,
+          "runs": 107,
+          "sr": 184.5
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 98.5,
+      "rank": 3
+    },
+    {
+      "player_id": 37052,
+      "player_name": "Naman Dhir",
+      "image_url": null,
+      "teams": [
+        "India",
+        "India A",
+        "Mumbai Indians"
+      ],
+      "total_balls": 589,
+      "total_runs": 992,
+      "total_matches": 46,
+      "total_strike_rate": 168.42,
+      "pressure_balls": 176,
+      "pressure_runs": 358,
+      "pressure_innings": 20,
+      "pressure_matches": 20,
+      "pressure_strike_rate": 203.41,
+      "normal_strike_rate": 153.51,
+      "strike_rate_delta": 49.9,
+      "pressure_average": 27.54,
+      "pressure_fours": 33,
+      "pressure_sixes": 22,
+      "pressure_dismissals": 13,
+      "expected_pressure_runs": 277.23,
+      "runs_added_above_expected": 80.77,
+      "raae_per_100_balls": 45.89,
+      "consistency_pct": 75.0,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "middle": {
+          "balls": 24,
+          "runs": 50,
+          "sr": 208.3
+        },
+        "death": {
+          "balls": 152,
+          "runs": 308,
+          "sr": 202.6
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 97.4,
+      "rank": 4
+    },
+    {
+      "player_id": 1699,
+      "player_name": "Suryakumar Yadav",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Suryakumar_Yadav_in_PMO_New_Delhi.jpg/330px-Suryakumar_Yadav_in_PMO_New_Delhi.jpg",
+      "teams": [
+        "India",
+        "Mumbai Indians"
+      ],
+      "total_balls": 2761,
+      "total_runs": 4595,
+      "total_matches": 139,
+      "total_strike_rate": 166.43,
+      "pressure_balls": 316,
+      "pressure_runs": 711,
+      "pressure_innings": 32,
+      "pressure_matches": 32,
+      "pressure_strike_rate": 225.0,
+      "normal_strike_rate": 158.85,
+      "strike_rate_delta": 66.15,
+      "pressure_average": 32.32,
+      "pressure_fours": 55,
+      "pressure_sixes": 57,
+      "pressure_dismissals": 22,
+      "expected_pressure_runs": 585.81,
+      "runs_added_above_expected": 125.19,
+      "raae_per_100_balls": 39.62,
+      "consistency_pct": 71.9,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 2,
+          "runs": 7,
+          "sr": 350.0
+        },
+        "middle": {
+          "balls": 51,
+          "runs": 98,
+          "sr": 192.2
+        },
+        "death": {
+          "balls": 263,
+          "runs": 606,
+          "sr": 230.4
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 96.8,
+      "rank": 5
+    },
+    {
+      "player_id": 4853,
+      "player_name": "Glenn Phillips",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Glenn_Phillips_2023.jpg/330px-Glenn_Phillips_2023.jpg",
+      "teams": [
+        "Gujarat Titans",
+        "New Zealand",
+        "Sunrisers Hyderabad"
+      ],
+      "total_balls": 1093,
+      "total_runs": 1625,
+      "total_matches": 56,
+      "total_strike_rate": 148.67,
+      "pressure_balls": 219,
+      "pressure_runs": 453,
+      "pressure_innings": 23,
+      "pressure_matches": 23,
+      "pressure_strike_rate": 206.85,
+      "normal_strike_rate": 134.1,
+      "strike_rate_delta": 72.75,
+      "pressure_average": 21.57,
+      "pressure_fours": 28,
+      "pressure_sixes": 33,
+      "pressure_dismissals": 21,
+      "expected_pressure_runs": 368.38,
+      "runs_added_above_expected": 84.62,
+      "raae_per_100_balls": 38.64,
+      "consistency_pct": 65.2,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "middle": {
+          "balls": 33,
+          "runs": 61,
+          "sr": 184.8
+        },
+        "death": {
+          "balls": 186,
+          "runs": 392,
+          "sr": 210.8
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 95.8,
+      "rank": 6
+    },
+    {
+      "player_id": 2417,
+      "player_name": "Akeal Hosein",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akeal_Hosein_2022.jpg/330px-Akeal_Hosein_2022.jpg",
+      "teams": [
+        "Chennai Super Kings",
+        "Sunrisers Hyderabad",
+        "West Indies"
+      ],
+      "total_balls": 223,
+      "total_runs": 286,
+      "total_matches": 32,
+      "total_strike_rate": 128.25,
+      "pressure_balls": 156,
+      "pressure_runs": 240,
+      "pressure_innings": 26,
+      "pressure_matches": 26,
+      "pressure_strike_rate": 153.85,
+      "normal_strike_rate": 68.66,
+      "strike_rate_delta": 85.19,
+      "pressure_average": 20.0,
+      "pressure_fours": 15,
+      "pressure_sixes": 17,
+      "pressure_dismissals": 12,
+      "expected_pressure_runs": 187.24,
+      "runs_added_above_expected": 52.76,
+      "raae_per_100_balls": 33.82,
+      "consistency_pct": 61.5,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "middle": {
+          "balls": 39,
+          "runs": 36,
+          "sr": 92.3
+        },
+        "death": {
+          "balls": 117,
+          "runs": 204,
+          "sr": 174.4
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 95.0,
+      "rank": 7
+    },
+    {
+      "player_id": 25213,
+      "player_name": "Dewald Brevis",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Dewald_Brevis_2023.jpg/330px-Dewald_Brevis_2023.jpg",
+      "teams": [
+        "Chennai Super Kings",
+        "Mumbai Indians",
+        "South Africa"
+      ],
+      "total_balls": 630,
+      "total_runs": 963,
+      "total_matches": 40,
+      "total_strike_rate": 152.86,
+      "pressure_balls": 68,
+      "pressure_runs": 139,
+      "pressure_innings": 9,
+      "pressure_matches": 9,
+      "pressure_strike_rate": 204.41,
+      "normal_strike_rate": 146.62,
+      "strike_rate_delta": 57.79,
+      "pressure_average": 23.17,
+      "pressure_fours": 11,
+      "pressure_sixes": 11,
+      "pressure_dismissals": 6,
+      "expected_pressure_runs": 100.83,
+      "runs_added_above_expected": 38.17,
+      "raae_per_100_balls": 56.13,
+      "consistency_pct": 66.7,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 8,
+          "runs": 11,
+          "sr": 137.5
+        },
+        "middle": {
+          "balls": 10,
+          "runs": 20,
+          "sr": 200.0
+        },
+        "death": {
+          "balls": 50,
+          "runs": 108,
+          "sr": 216.0
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 95.0,
+      "rank": 8
+    },
+    {
+      "player_id": 8739,
+      "player_name": "Muhammad Irfan",
+      "image_url": null,
+      "teams": [
+        "Pakistan",
+        "Pakistan A"
+      ],
+      "total_balls": 190,
+      "total_runs": 248,
+      "total_matches": 14,
+      "total_strike_rate": 130.53,
+      "pressure_balls": 69,
+      "pressure_runs": 136,
+      "pressure_innings": 7,
+      "pressure_matches": 7,
+      "pressure_strike_rate": 197.1,
+      "normal_strike_rate": 92.56,
+      "strike_rate_delta": 104.54,
+      "pressure_average": 27.2,
+      "pressure_fours": 11,
+      "pressure_sixes": 9,
+      "pressure_dismissals": 5,
+      "expected_pressure_runs": 116.11,
+      "runs_added_above_expected": 19.89,
+      "raae_per_100_balls": 28.83,
+      "consistency_pct": 71.4,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 2,
+          "runs": 2,
+          "sr": 100.0
+        },
+        "middle": {
+          "balls": 0,
+          "runs": 0,
+          "sr": 0.0
+        },
+        "death": {
+          "balls": 67,
+          "runs": 134,
+          "sr": 200.0
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 93.9,
+      "rank": 9
+    },
+    {
+      "player_id": 8221,
+      "player_name": "Nitish Reddy",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nitish_Kumar_Reddy.jpg/330px-Nitish_Kumar_Reddy.jpg",
+      "teams": [
+        "India",
+        "Sunrisers Hyderabad"
+      ],
+      "total_balls": 672,
+      "total_runs": 1011,
+      "total_matches": 45,
+      "total_strike_rate": 150.45,
+      "pressure_balls": 162,
+      "pressure_runs": 316,
+      "pressure_innings": 21,
+      "pressure_matches": 21,
+      "pressure_strike_rate": 195.06,
+      "normal_strike_rate": 136.27,
+      "strike_rate_delta": 58.79,
+      "pressure_average": 26.33,
+      "pressure_fours": 14,
+      "pressure_sixes": 28,
+      "pressure_dismissals": 12,
+      "expected_pressure_runs": 250.97,
+      "runs_added_above_expected": 65.03,
+      "raae_per_100_balls": 40.14,
+      "consistency_pct": 61.9,
+      "stage_breakdown": {
+        "powerplay": {
+          "balls": 7,
+          "runs": 9,
+          "sr": 128.6
+        },
+        "middle": {
+          "balls": 29,
+          "runs": 64,
+          "sr": 220.7
+        },
+        "death": {
+          "balls": 126,
+          "runs": 243,
+          "sr": 192.9
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 93.2,
+      "rank": 10
+    }
+  ],
+  "top_bowlers_preview": [
+    {
+      "player_id": 781,
+      "player_name": "Sunil Narine",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Sunil_Narine.jpg/330px-Sunil_Narine.jpg",
+      "teams": [
+        "Kolkata Knight Riders"
+      ],
+      "total_balls": 1533,
+      "total_overs": 255.5,
+      "total_runs_conceded": 1754,
+      "total_wickets": 66,
+      "total_economy": 6.86,
+      "total_matches": 67,
+      "pressure_balls": 237,
+      "pressure_overs": 39.5,
+      "pressure_runs_conceded": 239,
+      "pressure_wickets": 19,
+      "pressure_matches": 35,
+      "pressure_economy": 6.05,
+      "normal_economy": 7.01,
+      "economy_delta": 0.96,
+      "pressure_average": 12.58,
+      "pressure_dot_balls": 110,
+      "pressure_dot_pct": 46.4,
+      "expected_pressure_runs": 344.37,
+      "expected_pressure_wickets": 15.25,
+      "runs_saved_above_expected": 105.37,
+      "wickets_above_expected": 3.75,
+      "bowler_value_added": 122.26,
+      "bva_per_100_balls": 51.59,
+      "consistency_pct": 77.1,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.5,
+          "runs": 1,
+          "wickets": 2,
+          "econ": 2.0
+        },
+        "middle": {
+          "overs": 10.0,
+          "runs": 63,
+          "wickets": 1,
+          "econ": 6.3
+        },
+        "death": {
+          "overs": 29.0,
+          "runs": 175,
+          "wickets": 16,
+          "econ": 6.03
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 98.5,
+      "rank": 1
+    },
+    {
+      "player_id": 6643,
+      "player_name": "Hasan Mahmud",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Hasan_Mahmud_cricketer.jpg/330px-Hasan_Mahmud_cricketer.jpg",
+      "teams": [
+        "Bangladesh"
+      ],
+      "total_balls": 396,
+      "total_overs": 66.0,
+      "total_runs_conceded": 515,
+      "total_wickets": 22,
+      "total_economy": 7.8,
+      "total_matches": 20,
+      "pressure_balls": 104,
+      "pressure_overs": 17.3,
+      "pressure_runs_conceded": 110,
+      "pressure_wickets": 12,
+      "pressure_matches": 11,
+      "pressure_economy": 6.35,
+      "normal_economy": 8.32,
+      "economy_delta": 1.97,
+      "pressure_average": 9.17,
+      "pressure_dot_balls": 51,
+      "pressure_dot_pct": 49.0,
+      "expected_pressure_runs": 143.26,
+      "expected_pressure_wickets": 7.42,
+      "runs_saved_above_expected": 33.26,
+      "wickets_above_expected": 4.58,
+      "bowler_value_added": 53.89,
+      "bva_per_100_balls": 51.82,
+      "consistency_pct": 81.8,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 4.7,
+          "runs": 22,
+          "wickets": 1,
+          "econ": 4.71
+        },
+        "death": {
+          "overs": 12.7,
+          "runs": 88,
+          "wickets": 11,
+          "econ": 6.95
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 98.5,
+      "rank": 2
+    },
+    {
+      "player_id": 286,
+      "player_name": "Kane Richardson",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Kane_Richardson_2019.jpg/330px-Kane_Richardson_2019.jpg",
+      "teams": [
+        "Australia"
+      ],
+      "total_balls": 198,
+      "total_overs": 33.0,
+      "total_runs_conceded": 306,
+      "total_wickets": 15,
+      "total_economy": 9.27,
+      "total_matches": 9,
+      "pressure_balls": 69,
+      "pressure_overs": 11.5,
+      "pressure_runs_conceded": 87,
+      "pressure_wickets": 10,
+      "pressure_matches": 8,
+      "pressure_economy": 7.57,
+      "normal_economy": 10.19,
+      "economy_delta": 2.62,
+      "pressure_average": 8.7,
+      "pressure_dot_balls": 33,
+      "pressure_dot_pct": 47.8,
+      "expected_pressure_runs": 105.88,
+      "expected_pressure_wickets": 6.82,
+      "runs_saved_above_expected": 18.88,
+      "wickets_above_expected": 3.18,
+      "bowler_value_added": 33.19,
+      "bva_per_100_balls": 48.1,
+      "consistency_pct": 75.0,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "death": {
+          "overs": 11.5,
+          "runs": 87,
+          "wickets": 10,
+          "econ": 7.57
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 96.9,
+      "rank": 3
+    },
+    {
+      "player_id": 2490,
+      "player_name": "Mohammad Nawaz",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mohammad_Nawaz_cricketer.jpg/330px-Mohammad_Nawaz_cricketer.jpg",
+      "teams": [
+        "Pakistan"
+      ],
+      "total_balls": 1004,
+      "total_overs": 167.3,
+      "total_runs_conceded": 1192,
+      "total_wickets": 66,
+      "total_economy": 7.12,
+      "total_matches": 52,
+      "pressure_balls": 113,
+      "pressure_overs": 18.8,
+      "pressure_runs_conceded": 101,
+      "pressure_wickets": 12,
+      "pressure_matches": 14,
+      "pressure_economy": 5.36,
+      "normal_economy": 7.35,
+      "economy_delta": 1.99,
+      "pressure_average": 8.42,
+      "pressure_dot_balls": 55,
+      "pressure_dot_pct": 48.7,
+      "expected_pressure_runs": 133.07,
+      "expected_pressure_wickets": 8.33,
+      "runs_saved_above_expected": 32.07,
+      "wickets_above_expected": 3.67,
+      "bowler_value_added": 48.6,
+      "bva_per_100_balls": 43.01,
+      "consistency_pct": 64.3,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 1.0,
+          "runs": 8,
+          "wickets": 0,
+          "econ": 8.0
+        },
+        "middle": {
+          "overs": 11.0,
+          "runs": 51,
+          "wickets": 9,
+          "econ": 4.64
+        },
+        "death": {
+          "overs": 6.8,
+          "runs": 42,
+          "wickets": 3,
+          "econ": 6.15
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 96.6,
+      "rank": 4
+    },
+    {
+      "player_id": 5979,
+      "player_name": "Abrar Ahmed",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Abrar_Ahmed_cricketer.jpg/330px-Abrar_Ahmed_cricketer.jpg",
+      "teams": [
+        "Pakistan"
+      ],
+      "total_balls": 764,
+      "total_overs": 127.3,
+      "total_runs_conceded": 851,
+      "total_wickets": 46,
+      "total_economy": 6.68,
+      "total_matches": 35,
+      "pressure_balls": 155,
+      "pressure_overs": 25.8,
+      "pressure_runs_conceded": 142,
+      "pressure_wickets": 12,
+      "pressure_matches": 20,
+      "pressure_economy": 5.5,
+      "normal_economy": 6.99,
+      "economy_delta": 1.49,
+      "pressure_average": 11.83,
+      "pressure_dot_balls": 80,
+      "pressure_dot_pct": 51.6,
+      "expected_pressure_runs": 188.16,
+      "expected_pressure_wickets": 12.1,
+      "runs_saved_above_expected": 46.16,
+      "wickets_above_expected": -0.1,
+      "bowler_value_added": 45.72,
+      "bva_per_100_balls": 29.5,
+      "consistency_pct": 80.0,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 10.7,
+          "runs": 43,
+          "wickets": 3,
+          "econ": 4.03
+        },
+        "death": {
+          "overs": 15.2,
+          "runs": 99,
+          "wickets": 9,
+          "econ": 6.53
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 96.0,
+      "rank": 5
+    },
+    {
+      "player_id": 35318,
+      "player_name": "Sakib Hussain",
+      "image_url": null,
+      "teams": [
+        "Kolkata Knight Riders",
+        "Sunrisers Hyderabad"
+      ],
+      "total_balls": 253,
+      "total_overs": 42.2,
+      "total_runs_conceded": 396,
+      "total_wickets": 15,
+      "total_economy": 9.39,
+      "total_matches": 11,
+      "pressure_balls": 102,
+      "pressure_overs": 17.0,
+      "pressure_runs_conceded": 142,
+      "pressure_wickets": 9,
+      "pressure_matches": 10,
+      "pressure_economy": 8.35,
+      "normal_economy": 10.09,
+      "economy_delta": 1.74,
+      "pressure_average": 15.78,
+      "pressure_dot_balls": 42,
+      "pressure_dot_pct": 41.2,
+      "expected_pressure_runs": 177.34,
+      "expected_pressure_wickets": 8.79,
+      "runs_saved_above_expected": 35.34,
+      "wickets_above_expected": 0.21,
+      "bowler_value_added": 36.3,
+      "bva_per_100_balls": 35.59,
+      "consistency_pct": 70.0,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 5.0,
+          "runs": 33,
+          "wickets": 2,
+          "econ": 6.6
+        },
+        "death": {
+          "overs": 12.0,
+          "runs": 109,
+          "wickets": 7,
+          "econ": 9.08
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 95.0,
+      "rank": 6
+    },
+    {
+      "player_id": 4926,
+      "player_name": "Shadab Khan",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Shadab_Khan_in_2023.jpg/330px-Shadab_Khan_in_2023.jpg",
+      "teams": [
+        "Pakistan"
+      ],
+      "total_balls": 832,
+      "total_overs": 138.7,
+      "total_runs_conceded": 1097,
+      "total_wickets": 36,
+      "total_economy": 7.91,
+      "total_matches": 42,
+      "pressure_balls": 127,
+      "pressure_overs": 21.2,
+      "pressure_runs_conceded": 131,
+      "pressure_wickets": 12,
+      "pressure_matches": 18,
+      "pressure_economy": 6.19,
+      "normal_economy": 8.22,
+      "economy_delta": 2.03,
+      "pressure_average": 10.92,
+      "pressure_dot_balls": 54,
+      "pressure_dot_pct": 42.5,
+      "expected_pressure_runs": 155.55,
+      "expected_pressure_wickets": 8.01,
+      "runs_saved_above_expected": 24.55,
+      "wickets_above_expected": 3.99,
+      "bowler_value_added": 42.52,
+      "bva_per_100_balls": 33.48,
+      "consistency_pct": 66.7,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 11.8,
+          "runs": 69,
+          "wickets": 8,
+          "econ": 5.83
+        },
+        "death": {
+          "overs": 9.3,
+          "runs": 62,
+          "wickets": 4,
+          "econ": 6.64
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 94.9,
+      "rank": 7
+    },
+    {
+      "player_id": 2417,
+      "player_name": "Akeal Hosein",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akeal_Hosein_2022.jpg/330px-Akeal_Hosein_2022.jpg",
+      "teams": [
+        "Chennai Super Kings",
+        "Sunrisers Hyderabad",
+        "West Indies"
+      ],
+      "total_balls": 1693,
+      "total_overs": 282.2,
+      "total_runs_conceded": 2187,
+      "total_wickets": 79,
+      "total_economy": 7.75,
+      "total_matches": 79,
+      "pressure_balls": 122,
+      "pressure_overs": 20.3,
+      "pressure_runs_conceded": 153,
+      "pressure_wickets": 11,
+      "pressure_matches": 18,
+      "pressure_economy": 7.52,
+      "normal_economy": 7.77,
+      "economy_delta": 0.25,
+      "pressure_average": 13.91,
+      "pressure_dot_balls": 54,
+      "pressure_dot_pct": 44.3,
+      "expected_pressure_runs": 187.0,
+      "expected_pressure_wickets": 8.01,
+      "runs_saved_above_expected": 34.0,
+      "wickets_above_expected": 2.99,
+      "bowler_value_added": 47.47,
+      "bva_per_100_balls": 38.91,
+      "consistency_pct": 72.2,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.0,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 10.5,
+          "runs": 52,
+          "wickets": 6,
+          "econ": 4.95
+        },
+        "death": {
+          "overs": 9.8,
+          "runs": 101,
+          "wickets": 5,
+          "econ": 10.27
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 93.1,
+      "rank": 8
+    },
+    {
+      "player_id": 8661,
+      "player_name": "Matheesha Pathirana",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Matheesha_Pathirana.jpg/330px-Matheesha_Pathirana.jpg",
+      "teams": [
+        "Chennai Super Kings",
+        "Kolkata Knight Riders",
+        "Sri Lanka"
+      ],
+      "total_balls": 1135,
+      "total_overs": 189.2,
+      "total_runs_conceded": 1667,
+      "total_wickets": 82,
+      "total_economy": 8.81,
+      "total_matches": 54,
+      "pressure_balls": 508,
+      "pressure_overs": 84.7,
+      "pressure_runs_conceded": 737,
+      "pressure_wickets": 47,
+      "pressure_matches": 37,
+      "pressure_economy": 8.7,
+      "normal_economy": 8.9,
+      "economy_delta": 0.2,
+      "pressure_average": 15.68,
+      "pressure_dot_balls": 257,
+      "pressure_dot_pct": 50.6,
+      "expected_pressure_runs": 874.99,
+      "expected_pressure_wickets": 42.02,
+      "runs_saved_above_expected": 137.99,
+      "wickets_above_expected": 4.98,
+      "bowler_value_added": 160.38,
+      "bva_per_100_balls": 31.57,
+      "consistency_pct": 70.3,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.3,
+          "runs": 1,
+          "wickets": 0,
+          "econ": 3.0
+        },
+        "middle": {
+          "overs": 10.8,
+          "runs": 69,
+          "wickets": 3,
+          "econ": 6.37
+        },
+        "death": {
+          "overs": 73.5,
+          "runs": 667,
+          "wickets": 44,
+          "econ": 9.07
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 90.6,
+      "rank": 9
+    },
+    {
+      "player_id": 23467,
+      "player_name": "Gurjapneet Singh",
+      "image_url": null,
+      "teams": [
+        "Chennai Super Kings",
+        "India A"
+      ],
+      "total_balls": 241,
+      "total_overs": 40.2,
+      "total_runs_conceded": 355,
+      "total_wickets": 11,
+      "total_economy": 8.84,
+      "total_matches": 12,
+      "pressure_balls": 76,
+      "pressure_overs": 12.7,
+      "pressure_runs_conceded": 103,
+      "pressure_wickets": 6,
+      "pressure_matches": 9,
+      "pressure_economy": 8.13,
+      "normal_economy": 9.16,
+      "economy_delta": 1.03,
+      "pressure_average": 17.17,
+      "pressure_dot_balls": 29,
+      "pressure_dot_pct": 38.2,
+      "expected_pressure_runs": 122.68,
+      "expected_pressure_wickets": 5.14,
+      "runs_saved_above_expected": 19.68,
+      "wickets_above_expected": 0.86,
+      "bowler_value_added": 23.55,
+      "bva_per_100_balls": 30.99,
+      "consistency_pct": 66.7,
+      "stage_breakdown": {
+        "powerplay": {
+          "overs": 0.5,
+          "runs": 0,
+          "wickets": 0,
+          "econ": 0.0
+        },
+        "middle": {
+          "overs": 1.0,
+          "runs": 11,
+          "wickets": 0,
+          "econ": 11.0
+        },
+        "death": {
+          "overs": 11.2,
+          "runs": 92,
+          "wickets": 6,
+          "econ": 8.24
+        }
+      },
+      "eligible": true,
+      "evidence_status": "Sufficient Evidence",
+      "prs_score": 89.0,
+      "rank": 10
+    }
+  ]
+}
