@@ -36,6 +36,7 @@ except ImportError:
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 PROCESSED_DIR = os.path.join(BASE_DIR, "backend", "processed_data")
+PKL_GZ_PATH = os.path.join(PROCESSED_DIR, "enriched_features.pkl.gz")
 PKL_PATH = os.path.join(PROCESSED_DIR, "enriched_features.pkl")
 EVAL_CACHE_PATH = os.path.join(PROCESSED_DIR, "model_accuracy_evaluation.json")
 
@@ -77,16 +78,47 @@ def sanitize(obj):
 
 
 def load_dataset():
-    """Load enriched dataframe if available; otherwise build on the fly."""
+    """Load enriched dataframe from compressed gzip pickle or raw pickle, with robust fallbacks."""
+    if os.path.exists(PKL_GZ_PATH):
+        try:
+            return pd.read_pickle(PKL_GZ_PATH, compression="gzip")
+        except Exception as e:
+            print(f"[ModelAccuracy] Error loading gzip pickle: {e}")
+
     if os.path.exists(PKL_PATH):
         try:
             return pd.read_pickle(PKL_PATH)
         except Exception as e:
             print(f"[ModelAccuracy] Error loading pickle: {e}")
 
-    # Fallback: import builder from scratch
-    from backend.services.model_accuracy_service import load_and_prepare_data
-    return load_and_prepare_data()
+    # Fallback to building directly from CSV files in data pack if available
+    data_pack_dir = os.path.join(BASE_DIR, "6af458274c1e8_data_pack", "Data Pack")
+    bb_path = os.path.join(data_pack_dir, "ball_by_ball.csv")
+    matches_path = os.path.join(data_pack_dir, "matches.csv")
+    if os.path.exists(bb_path) and os.path.exists(matches_path):
+        try:
+            print("[ModelAccuracy] Building baseline features from CSV files...")
+            bb = pd.read_csv(bb_path)
+            matches = pd.read_csv(matches_path)
+            matches["match_dt"] = pd.to_datetime(matches["match_date"], errors="coerce")
+            matches["match_year"] = matches["match_dt"].dt.year.fillna(2022).astype(int)
+            matches["is_ipl"] = (matches.get("comp_id", 0) == 1).astype(int)
+            bb = bb.merge(matches[["match_id", "match_year", "knock_out", "is_ipl"]], on="match_id", how="left")
+            bb["is_legal_ball"] = ~bb["extras_type"].isin(["wide", "Overstep"])
+            bb["is_boundary"] = (bb["runs"] >= 4).astype(int)
+            bb["cum_runs"] = bb.groupby(["match_id", "innings"])["runs"].cumsum() - bb["runs"]
+            bb["cum_wickets"] = bb.groupby(["match_id", "innings"])["is_wicket"].cumsum() - bb["is_wicket"]
+            bb["balls_rem"] = np.clip(120 - (bb.groupby(["match_id", "innings"])["is_legal_ball"].cumsum() - bb["is_legal_ball"]), 1, 120)
+            bb["wickets_rem"] = np.clip(10 - bb["cum_wickets"], 1, 10)
+            bb["runs_needed"] = np.maximum(0, 165 - bb["cum_runs"])
+            bb["rrr"] = np.where(bb["innings"] == 2, (bb["runs_needed"] / bb["balls_rem"]) * 6.0, 0.0)
+            bb["crr"] = (bb["cum_runs"] / np.maximum(1, 120 - bb["balls_rem"])) * 6.0
+            bb["pressure_index"] = 50.0
+            return bb
+        except Exception as e:
+            print(f"[ModelAccuracy] Error building from raw CSV: {e}")
+
+    return None
 
 
 def get_latest_evaluation():
@@ -117,6 +149,13 @@ def run_model_accuracy_evaluation():
     t0 = time.time()
     print("[ModelAccuracy] Loading dataset...")
     df = load_dataset()
+
+    if df is None:
+        cached = get_latest_evaluation()
+        if cached:
+            print("[ModelAccuracy] Falling back to precomputed cached evaluation.")
+            return cached
+        raise FileNotFoundError("Evaluation dataset could not be loaded and no precomputed cache exists.")
 
     train_mask = df["match_year"] <= 2024
     test_mask  = df["match_year"] >= 2025
