@@ -1,12 +1,13 @@
 services:
   - type: web
-    name: superr-selector-season2
-    runtime: python
+    name: superr-selector
+    env: python
+    region: singapore
+    plan: free
     buildCommand: "pip install -r requirements.txt && npm --prefix frontend install && npm --prefix frontend run build"
     startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.12.2
-      - key: PORT
-        value: 10000
-    healthCheckPath: /api/health
+        value: 3.11.9
+      - key: NODE_VERSION
+        value: 20.12.0
